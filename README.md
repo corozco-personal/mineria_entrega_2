@@ -41,8 +41,28 @@ En Google Colab se debe abrir `proyecto_estudiante_a.ipynb` y ejecutar las celda
 <details>
 <summary><strong>Estudiante B: El Cosmologo (SDSS y MAST)</strong></summary>
 
-TODO: agregar la consulta a SDSS, el analisis de galaxias y cuasares, y la exploracion de observaciones en MAST.
+### Consulta y procesamiento
 
+El pipeline consulta el SkyServer de SDSS enviando una petición SQL vía Bash. Se utiliza un `INNER JOIN` para unir `PhotoObj` (fotometría) y `SpecObj` (espectroscopía), limitando el área espacial con `dbo.fGetNearbyObjEq` a un radio de 30 minutos de arco para igualar el campo del Estudiante A.
+
+Se extraen el corrimiento al rojo (`z`), la clasificación (`class`) y las magnitudes (`u`, `g`). Tras limpiar valores nulos con Pandas, se define el índice de color:
+
+```text
+Índice de color = u - g
+```
+
+Luego, se grafica con Seaborn el Corrimiento al Rojo vs Índice de Color, diferenciando visualmente Galaxias y Cuásares. Paralelamente, se verificó en el portal MAST (`135.5, 0.5 r=0.5d`) que existen observaciones del Telescopio Espacial Hubble (HST) para estas coordenadas exactas.
+
+### Archivos
+
+- `datos/sdss_datos.csv`: Datos cruzados descargados desde SDSS.
+- Código en Colab: Celdas combinadas de Bash (extracción SQL) y Python (limpieza y análisis).
+
+### Ejecución
+
+El flujo se ejecuta secuencialmente en Google Colab:
+1. Ejecutar la celda Bash para construir la URL y descargar los datos con `wget`.
+2. Ejecutar la celda Python para procesar el CSV y desplegar la gráfica final.
 </details>
 
 <details>
