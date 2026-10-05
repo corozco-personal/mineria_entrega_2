@@ -87,6 +87,8 @@ En la ejecucion realizada se obtuvieron **1.884 estrellas galacticas con fotomet
 
 ### Resultados de SDSS
 
+![Corrimiento al rojo vs indice de color en SDSS](resultados/redshift_vs_color_sdss.png)
+
 La consulta conjunta de fotometria y espectroscopia de SDSS produjo **252 objetos** con datos completos: **151 galaxias, 40 cuasares y 61 estrellas**. Las estrellas presentan corrimientos al rojo cercanos a cero, como se espera para objetos de la Via Lactea. Las galaxias tienen una mediana de `z = 0.47` y de `u-g = 1.46`, mientras los cuasares alcanzan una mediana de `z = 1.47` y de `u-g = 0.46`.
 
 La diferencia en corrimiento al rojo separa claramente las poblaciones: las galaxias y, sobre todo, los cuasares se encuentran a distancias cosmologicas, mientras las estrellas son fuentes locales. En esta muestra los cuasares tienden a presentar un color ultravioleta-verde mas azul que las galaxias, aunque existe dispersion y algunos objetos se superponen. Por esta razon el color por si solo no determina de forma definitiva la naturaleza de una fuente; la clasificacion espectroscopica es necesaria para confirmarla.
